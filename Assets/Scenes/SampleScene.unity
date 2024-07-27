@@ -541,7 +541,7 @@ MonoBehaviour:
   - {fileID: 168106596}
   - {fileID: 761776060}
   - {fileID: 183329152}
-  _enemy: {fileID: 1696834749189059949, guid: 4a46e821c58b5cd42b14eaab6d197266, type: 3}
+  _enemyPrefab: {fileID: 767900272265381295, guid: 4a46e821c58b5cd42b14eaab6d197266, type: 3}
   _spawnFrequency: 2
 --- !u!4 &2099802385
 Transform:
