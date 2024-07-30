@@ -4,9 +4,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Enemy _enemyPrefab;
-    
-    [SerializeField]private Transform[] _spawnPoints;
-    [SerializeField] private Vector3[] _spawnDirections;
+
+    [SerializeField] private SpawnPoint[] _spawnPoints;
     [SerializeField] private float _spawnFrequency = 2f;
     [SerializeField] private int _minRange = 0;
 
@@ -30,11 +29,10 @@ public class Spawner : MonoBehaviour
         while (isRunning)
         {
             int spawnIndex = Random.Range(_minRange, _spawnPoints.Length);
-            Transform spawnPoint = _spawnPoints[spawnIndex];
-            Vector3 spawnDirection = _spawnDirections[spawnIndex];
+            SpawnPoint spawnPoint = _spawnPoints[spawnIndex];
 
-            Enemy newEnemy = Instantiate(_enemyPrefab, spawnPoint.position, Quaternion.identity);
-            newEnemy.SetDirection(spawnDirection);
+            Enemy newEnemy = Instantiate(_enemyPrefab, spawnPoint.transform.position, Quaternion.identity);
+            newEnemy.SetDirection(spawnPoint.GetDirection());
 
             yield return _wait;
         }
