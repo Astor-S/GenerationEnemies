@@ -6,7 +6,6 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
-        Vector3 direction = transform.forward;
-        transform.Translate(direction * _speed * Time.deltaTime);
+        transform.Translate(transform.forward * _speed * Time.deltaTime);
     }
 }
