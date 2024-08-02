@@ -9,7 +9,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _spawnFrequency = 2f;
     [SerializeField] private int _minRange = 0;
 
-    private Coroutine _coroutine;
     private WaitForSeconds _wait;
 
     private void Awake()
@@ -19,7 +18,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        _coroutine = StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnEnemies());
     }
 
     private IEnumerator SpawnEnemies()
